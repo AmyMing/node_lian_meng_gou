@@ -1,11 +1,12 @@
 'use strict';
 
-let Router = require('koa-router');
-let router = new Router();
-let authRouter = new Router({prefix:'admin'});
-
+let router = require('koa-router');
+let Router = new router();
+let authRouter = new router({prefix:'/admin'});
 let Controllers = require('./controllers/')
-router.get('/',function* () {
+const session = require('koa-session');
+
+Router.get('/',function* () {
     this.body = 'hi world';
 });
 
@@ -15,15 +16,24 @@ authRouter.use(function*(){
         this.body = '欢迎'+username;
     }
     else{
-        this.body = '请登录';
+        this.redirect('/login');
     }
+
 })
+
+Router.get('/login',function*(){
+    this.body = yield this.render('index');
+    //this.body = "this is login page";
+});
+
 
 authRouter.get('/test',function*(){
     this.body += 'hello ,world';
 });
 
-router.get('/user',Controllers.User.test);
 
-exports.router = router;
+
+Router.get('/user',Controllers.User.test);
+
+exports.Router = Router;
 exports.authRouter = authRouter;

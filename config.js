@@ -3,7 +3,8 @@
 
 let config = {
     port : 3333,
-    name : 'wuyingming'
+    name : 'wuyingming',
+    sessionKey : 'lian_meng_gou'
 };
 
 console.log(config);

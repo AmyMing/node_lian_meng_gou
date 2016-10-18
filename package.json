@@ -1,0 +1,26 @@
+{
+  "name": "lian_meng_gou",
+  "version": "1.0.0",
+  "description": "node版本的联盟购 第一版本",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmyMing/node_lian_meng_gou.git"
+  },
+  "author": "wuyingming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmyMing/node_lian_meng_gou/issues"
+  },
+  "homepage": "https://github.com/AmyMing/node_lian_meng_gou#readme",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "koa": "^1.2.4",
+    "koa-render": "^0.2.1",
+    "koa-router": "^5.4.0",
+    "koa-session": "^3.4.0"
+  }
+}
